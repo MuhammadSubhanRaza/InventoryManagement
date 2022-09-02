@@ -23,6 +23,9 @@ import { LoginComponent } from './common/login/login.component';
 import { LoaderComponent } from './common/loader/loader.component';
 import { SuccessAlertComponent } from './common/success-alert/success-alert.component';
 import { FailureAlertComponent } from './common/failure-alert/failure-alert.component';
+import { OffersComponent } from './admin/offers/offers.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { FailureAlertComponent } from './common/failure-alert/failure-alert.comp
     LoginComponent,
     LoaderComponent,
     SuccessAlertComponent,
-    FailureAlertComponent
+    FailureAlertComponent,
+    OffersComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

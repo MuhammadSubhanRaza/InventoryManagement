@@ -1,0 +1,127 @@
+
+
+.usr-dbd-first{
+    padding: 10px;
+}
+
+.usr-dbd-first img{
+    width: 100%;
+    margin-top: 20px;
+}
+.usr-dbd-first h5{
+    color: var(--secondary);
+}
+.usr-dbd-first h4{
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.usr-db-srch-pnl
+{
+    background-color: var(--secondary);
+    text-align: center;
+    padding: 40px 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.usr-db-srch-pnl h6{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 20px;
+}
+.usr-db-srch-rslt
+{
+    margin-top: 20px;
+}
+.usr-rslt-ind{
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: rgb(221, 221, 221) 0px 0px 10px;
+}
+.usr-rslt-ind span{
+    color: white;
+    display: block;
+    font-size: 1.4rem;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.usr-rslt-ind-icon{
+    background-color: rgb(185, 218, 255);
+}
+.usr-rslt-ind div{
+    padding-left: 20px;
+}
+.usr-rslt-ind h6{
+    margin: 0;
+    padding: 0;
+    color: var(--secondary);
+}
+.usr-rslt-ind h5{
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+}
+.out-of-stock-list
+{
+    margin: 10px;
+    background-color: white;
+    height: 300px;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: rgb(223, 223, 223) 0px 0px 10px;
+}
+.out-of-stock-list h5{
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: rgb(235, 235, 235) 0px 0px 20px;
+}
+.out-of-stock-list ul{
+    padding: 0;
+    margin: 0;
+}
+.out-of-stock-list ul li{
+    display: block;
+    border: solid 1px silver;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin: 10px;
+}
+.out-of-stck-item h6{
+    width: 40%;
+    display: inline-block;
+    padding: 5px;
+    font-size: 1.1rem;
+}
+.out-of-stck-item h6:nth-child(2)
+{
+    color: silver;
+}
+.out-of-stck-item span{
+    background-color: red;
+    width: 8px;
+    display: inline-block;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.usr-dbd-graph-cont{
+    /* padding: 10px; */
+    margin: 10px;
+    margin-top: 30px;
+}
