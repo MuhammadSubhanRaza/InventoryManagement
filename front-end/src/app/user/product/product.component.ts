@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  dtOptions: any = {};
+
   constructor() { }
 
   ngOnInit(): void {
+    this.dtOptions = {
+      dom: 'Blfrtip',
+      buttons: [
+        'copy',
+        'print',
+        'csv',
+        'excel',
+        'pdf'
+      ]
+    };
   }
 
 }

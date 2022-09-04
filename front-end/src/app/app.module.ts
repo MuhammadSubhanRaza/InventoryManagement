@@ -26,6 +26,7 @@ import { FailureAlertComponent } from './common/failure-alert/failure-alert.comp
 import { OffersComponent } from './admin/offers/offers.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
