@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "Hh2TnoGdZbmme1ZHU9GBO7w7djwKPb8QgiNzgBrLiUM=",
+  "Source": "BackendInventory",
+  "BasePath": "_content/BackendInventory",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BackendInventory\\wwwroot",
+      "Source": "BackendInventory",
+      "ContentRoot": "E:\\InventoryManagement\\BackendInventory\\BackendInventory\\wwwroot\\",
+      "BasePath": "_content/BackendInventory",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

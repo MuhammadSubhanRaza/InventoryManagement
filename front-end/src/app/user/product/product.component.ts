@@ -12,6 +12,12 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.ExtendDataTable()
+  }
+
+
+  ExtendDataTable()
+  {
     this.dtOptions = {
       dom: 'Blfrtip',
       buttons: [
@@ -23,5 +29,4 @@ export class ProductComponent implements OnInit {
       ]
     };
   }
-
 }
