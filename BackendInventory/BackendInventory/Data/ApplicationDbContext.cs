@@ -27,5 +27,16 @@ namespace BackendInventory.Data
         public DbSet<Supplier> Suppliers { get; set; }
 
 
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Product>().HasKey(
+        //        pd => pd.CategoryId
+        //        );
+        //    modelBuilder.Entity<Product>().HasMany();
+        //}
+
+
     }
+
 }

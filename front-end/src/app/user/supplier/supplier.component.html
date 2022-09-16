@@ -1,22 +1,22 @@
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>Supplier Entry</h3>
 
-    <form action="">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
         <div class="container-fluid">
             <div class="row m-3">
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Company Name</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input name="compName" #compName="ngModel" [(ngModel)]="service.formData.companyName" required type="text" name="reference">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Reg. No.</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>  
+                    <input required name="regNumber" #regNumber="ngModel" [(ngModel)]="service.formData.regNumber" type="text" name="reference">
+                    <!-- <span class="input-error">* Error goes here</span>   -->
                 </div>
             </div>
 
@@ -25,15 +25,15 @@
                     <label>Contact No</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input name="contactNo" #contactNo="ngModel" [(ngModel)]="service.formData.contactNo" required type="text" name="reference">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Address</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="text" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
+                    <input name="address" #address="ngModel" [(ngModel)]="service.formData.address" required type="text" name="reciever_name">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
@@ -42,12 +42,11 @@
                     <label>City</label>
                 </div>
                 <div class="col-md-4">
-                    <select class="mt-3">
-                        <option value="-1">-- Select City</option>
-                        <option value="">Karachi</option>
-                        <option value="">Lahore</option>
+                    <select name="cityId" #cityId="ngModel" [(ngModel)]="service.formData.cityId" required class="mt-3">
+                        <option value="-1" selected>-- Select City</option>
+                        <option value="{{item.id}}" *ngFor="let item of cities">{{item.name}}</option>
                     </select>
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
@@ -58,21 +57,21 @@
                     <label>Supplier Name</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="text" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
+                    <input name="supplierName" #supplierName="ngModel" [(ngModel)]="service.formData.supplierName" required type="text" name="reciever_name">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Supplier Contact</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="text" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
+                    <input name="supplierContact" #supplierContact="ngModel" [(ngModel)]="service.formData.supplierContact" required type="text" name="reciever_name">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
            
             <div class="row m-3">
-                <button class="btn btnShipPrimary mr-3">Add Supplier</button>
-                <button class="btn btnShipSecondary">Reset</button>
+                <button class="btn btnShipPrimary mr-3" [disabled]="form.invalid">Add Supplier</button>
+                <button class="btn btnShipSecondary" (click)="resetForm(form)">Reset</button>
             </div>
 
         </div>

@@ -1,7 +1,7 @@
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>Purchase Entry</h3>
 
-    <form action="">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
         <div class="container-fluid">
             <div class="row m-3">
                 <div class="col-md-2 add-shp-lbl-cont">
@@ -13,7 +13,7 @@
                         <option value="">Cat 1</option>
                         <option value="">Cat 2</option>
                     </select>
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Supplier</label>
@@ -24,7 +24,7 @@
                         <option value="">Cat 1</option>
                         <option value="">Cat 2</option>
                     </select>
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
@@ -34,14 +34,14 @@
                 </div>
                 <div class="col-md-4">
                     <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Total Quantity</label>
                 </div>
                 <div class="col-md-4 ">
                     <input type="text" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
@@ -51,20 +51,37 @@
                 </div>
                 <div class="col-md-4">
                     <input type="date" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Total Amount</label>
                 </div>
                 <div class="col-md-4 ">
                     <input type="text" name="reciever_name" disabled>
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
+                </div>
+            </div>
+
+            <div class="row m-3">
+                <div class="col-md-2 add-shp-lbl-cont">
+                    <label>Retail Price</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="reference">
+                    <!-- <span class="input-error">* Error goes here</span> -->
+                </div>
+                <div class="col-md-2 add-shp-lbl-cont">
+                    <label>Discount</label>
+                </div>
+                <div class="col-md-4 ">
+                    <input type="text" name="reciever_name">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
            
             <div class="row m-3">
-                <button class="btn btnShipPrimary mr-3">Add Purchase</button>
-                <button class="btn btnShipSecondary">Reset</button>
+                <button class="btn btnShipPrimary mr-3" [disabled]="form.invalid">Add Purchase</button>
+                <button class="btn btnShipSecondary" (click)="resetForm(form)">Reset</button>
             </div>
 
         </div>

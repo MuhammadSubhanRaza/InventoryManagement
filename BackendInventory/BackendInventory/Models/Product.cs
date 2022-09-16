@@ -10,14 +10,14 @@ namespace BackendInventory.Models
         [Required]
         [MaxLength(length:100)]
         public string Name { get; set; }
-        public float Weight { get; set; }
+        public string Weight { get; set; }
         public string Description { get; set; }
-        public DateTime ExpiryDate { get; set; }
+        public string ExpiryDate { get; set; }
         public string? ImagePath { get; set; }
         [Required]
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
     }
 }

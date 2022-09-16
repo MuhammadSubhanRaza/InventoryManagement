@@ -11,6 +11,6 @@ namespace BackendInventory.Models
         public string Name { get; set; }
 
 
-        public ICollection<Supplier> Suppliers { get; set; }
+        //public ICollection<Supplier> Suppliers { get; set; }
     }
 }

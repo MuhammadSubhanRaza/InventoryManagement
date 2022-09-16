@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +12,12 @@ export class ProductComponent implements OnInit {
 
   dtOptions: any = {};
 
-  constructor() { }
+  products : Product[]
+
+  constructor(public service:ProductService, private toastr:ToastrService) {
+    
+    this.loadAllProducts()
+   }
 
   ngOnInit(): void {
     this.ExtendDataTable()
@@ -29,4 +37,20 @@ export class ProductComponent implements OnInit {
       ]
     };
   }
+
+
+  loadAllProducts()
+  {
+    this.service.getProducts().subscribe(
+      res=>{
+        this.products = res as Product[]
+        console.log(res)
+      },
+      err=>{
+        this.toastr.error("Some error occurred while fetching data")
+      }
+    )
+  }
+
+  
 }

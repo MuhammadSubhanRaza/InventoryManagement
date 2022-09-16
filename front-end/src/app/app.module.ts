@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +29,9 @@ import { OffersComponent } from './admin/offers/offers.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { DataTablesModule } from 'angular-datatables';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AllSuppliersComponent } from './user/all-suppliers/all-suppliers.component';
 
 @NgModule({
   declarations: [
@@ -53,12 +58,17 @@ import { DataTablesModule } from 'angular-datatables';
     FailureAlertComponent,
     OffersComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    AllSuppliersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

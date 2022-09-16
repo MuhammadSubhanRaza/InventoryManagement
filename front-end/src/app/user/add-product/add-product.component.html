@@ -1,26 +1,27 @@
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>Product Entry</h3>
 
-    <form action="">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
         <div class="container-fluid">
             <div class="row m-3">
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Product Name</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input required [class.invalidControl]="prodName.invalid && prodName.touched"
+                     name="prodName" #prodName="ngModel" [(ngModel)]="service.formData.name" 
+                     type="text" />
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Category</label>
                 </div>
                 <div class="col-md-4 ">
-                    <select class="mt-3">
+                    <select required name="catId" #catId="ngModel" [(ngModel)]="service.formData.categoryId" class="mt-3">
                         <option value="-1">Select Category</option>
-                        <option value="">Cat 1</option>
-                        <option value="">Cat 2</option>
+                        <option value="{{item.id}}" *ngFor="let item of categories">{{item.name}}</option>
                     </select>
-                    <span class="input-error">* Error goes here</span>
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
@@ -29,15 +30,15 @@
                     <label>Weight</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input required name="prodWeight" #prodWeight="ngModel" [(ngModel)]="service.formData.weight" type="text" name="reference">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Description</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="text" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
+                    <input name="prodDesc" #prodDesc="ngModel" [(ngModel)]="service.formData.description" type="text" name="reciever_name">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
@@ -46,14 +47,14 @@
                     <label>Expiry Date</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="date" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input required name="prodExpiry" #prodExpiry="ngModel" [(ngModel)]="service.formData.expiryDate" type="date" name="reference">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
            
             <div class="row m-3">
-                <button class="btn btnShipPrimary mr-3">Add Product</button>
-                <button class="btn btnShipSecondary">Reset</button>
+                <button class="btn btnShipPrimary mr-3" [disabled]="form.invalid">Add Product</button>
+                <button class="btn btnShipSecondary" (click)="resetForm(form)">Reset</button>
             </div>
 
         </div>
