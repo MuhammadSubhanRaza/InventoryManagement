@@ -1,65 +1,67 @@
 
 
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>Employee Entry</h3>
 
-    <form action="">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
         <div class="container-fluid">
             <div class="row m-3">
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>First Name</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input required [class.invalidControl]="fname.invalid && fname.touched"
+                    name="fname" #fname="ngModel" [(ngModel)]="service.formData.firstName"
+                    type="text">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Last Name</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input [(ngModel)]="service.formData.lastName" 
+                    name="lastname"
+                    type="text" >
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
             <div class="row m-3">
                 <div class="col-md-2 add-shp-lbl-cont">
-                    <label>CNIC</label>
+                    <label>Username</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input type="text" [class.invalidControl]="username.invalid && username.touched"
+                    name="username" #username="ngModel" [(ngModel)]="service.formData.username">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
-                    <label>Date of Date</label>
+                    <label>Contact</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input type="date" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
+                    <input type="text" required [class.invalidControl]="contact.invalid && contact.touched"
+                    name="contact" #contact="ngModel" [(ngModel)]="service.formData.contact" 
+                    name="reciever_name">
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
 
-            <hr>
 
             <div class="row m-3">
+               
                 <div class="col-md-2 add-shp-lbl-cont">
-                    <label>Joining Date</label>
-                </div>
-                <div class="col-md-4 ">
-                    <input type="date" name="reciever_name">
-                    <span class="input-error">* Error goes here</span>
-                </div>
-                <div class="col-md-2 add-shp-lbl-cont">
-                    <label>Salary</label>
+                    <label>Email</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="number" name="reference">
-                    <span class="input-error">* Error goes here</span>
+                    <input type="email" 
+                    required [class.invalidControl]="email.invalid && email.touched"
+                    name="email" #email="ngModel" [(ngModel)]="service.formData.email" >
+                    <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
             </div>
            
             <div class="row m-3">
-                <button class="btn btnShipPrimary mr-3">Add Employee</button>
+                <button class="btn btnShipPrimary mr-3" [disabled]="form.invalid">Add Employee</button>
                 <button class="btn btnShipSecondary">Reset</button>
             </div>
 

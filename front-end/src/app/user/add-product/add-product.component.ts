@@ -41,7 +41,6 @@ export class AddProductComponent implements OnInit {
     this.service.getCategories().subscribe(
       res=>{
         this.categories = res as Category[]
-      
       },
       err=>{
         this.toastr.error("Some error occurred while fetching data")

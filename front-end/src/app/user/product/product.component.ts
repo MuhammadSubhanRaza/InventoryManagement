@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit,AfterViewInit {
 
   dtOptions: any = {};
 
@@ -19,10 +19,31 @@ export class ProductComponent implements OnInit {
     this.loadAllProducts()
    }
 
+   
+  ngAfterViewInit(): void {
+  }
+
   ngOnInit(): void {
+    // this.loadAllProducts()
     this.ExtendDataTable()
   }
 
+
+
+  loadAllProducts()
+  {
+    this.service.getProducts().subscribe(
+      res=>{
+        this.products = res as Product[]
+        // this.ExtendDataTable()
+      },
+      err=>{
+        this.toastr.error("Some error occurred while fetching data")
+      }
+    )
+  }
+
+  
 
   ExtendDataTable()
   {
@@ -38,19 +59,6 @@ export class ProductComponent implements OnInit {
     };
   }
 
-
-  loadAllProducts()
-  {
-    this.service.getProducts().subscribe(
-      res=>{
-        this.products = res as Product[]
-        console.log(res)
-      },
-      err=>{
-        this.toastr.error("Some error occurred while fetching data")
-      }
-    )
-  }
 
   
 }

@@ -10,8 +10,8 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-  readonly baseUrl = "https://localhost:7023/api/products";
-  readonly catUrl = "https://localhost:7023/api/categories";
+  readonly baseUrl = "http://localhost:5162/api/products";
+  readonly catUrl = "http://localhost:5162/api/categories";
 
   formData:Product = new Product(); 
   

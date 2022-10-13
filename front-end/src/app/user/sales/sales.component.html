@@ -1,30 +1,34 @@
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>Sales window</h3>
 
-    <form action="">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
         <div class="container-fluid">
             <div class="row m-3">
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Product Code</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" placeholder="Enter product code here">
-                    <span class="input-error">* Error goes here</span>
+                    <input type="text" placeholder="Enter product code here"
+                    required [class.invalidControl]="code.invalid && code.touched"
+                     name="code" #code="ngModel" [(ngModel)]="productCode"
+                    >
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Quantity</label>
                 </div>
                 <div class="col-md-4 ">
-                   <input type="number" placeholder="Enter Product Quantity">
-                    <span class="input-error">* Error goes here</span>
+                   <input type="number" placeholder="Enter Product Quantity"
+                   required [class.invalidControl]="qty.invalid && qty.touched"
+                   name="qty" #qty="ngModel" [(ngModel)]="productQty"
+                   >
                 </div>
             </div>
 
            
             <div class="row m-3">
-                <button class="btn btnShipPrimary mr-3">Add Item in Queue</button>
-                <button class="btn btnShipSecondary">Reset</button>
-                <button class="btn btnShipSecondary ml-3">Promo Code / Voucher No</button>
+                <button type="submit" class="btn btnShipPrimary mr-3" [disabled]="form.invalid" >Add Item in Queue</button>
+                <!-- <button class="btn btnShipSecondary">Reset</button> -->
+                <!-- <button class="btn btnShipSecondary ml-3">Promo Code / Voucher No</button> -->
             </div>
 
         </div>
@@ -45,9 +49,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Lorem, ipsum.</td>
-                <td>Lorem, ipsum.</td>
+            <tr *ngFor="let item of itemsList">
+                <td>{{item.product}}</td>
+                <td>{{item.quantity}}</td>
                 <td>
                     <a href="#" class="btn-in-table btn-table-edit">
                         <i class="fa fa-trash"></i>

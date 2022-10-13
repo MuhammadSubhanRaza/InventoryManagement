@@ -1,4 +1,4 @@
-<section class="content-section">
+<section class="content-section animate__animated animate__zoomIn">
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -9,11 +9,13 @@
                         Set penalty margin on sales return    
                     </p>
                     
-                    <form action="">
+                    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
                         <label for="">Deduction Margin</label>
-                        <input type="text" placeholder="Enter margin ratio here">
+                        <input type="text" placeholder="Enter margin ratio here" required [class.invalidControl]="ratio.invalid && ratio.touched"
+                        name="ratio" #ratio="ngModel" [(ngModel)]="service.formData.ratio"
+                        type="text">
                         <div class="mt-4">
-                            <button class="btn btnShipPrimary w-100" type="submit">Submit</button>
+                            <button [disabled]="form.invalid" class="btn btnShipPrimary w-100" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

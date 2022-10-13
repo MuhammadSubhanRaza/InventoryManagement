@@ -10,7 +10,7 @@ export class CategoryService {
 
   constructor(private http:HttpClient) { }
 
-  readonly baseUrl = "https://localhost:7023/api/categories";
+  readonly baseUrl = "http://localhost:5162/api/categories";
   formData:Category = new Category(); 
 
   getCategories()

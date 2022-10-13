@@ -1,4 +1,4 @@
-<section class="content-section">
+<section class="main-content-card animate__animated animate__zoomIn">
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -7,17 +7,27 @@
                     <h3>Create Offer</h3>
                    
                     
-                    <form action="">
+                    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
                         <label for="">Offer Name</label>
-                        <input type="text" placeholder="Enter offer name here">
+                        <input type="text" placeholder="Enter offer name here"
+                        required [class.invalidControl]="name.invalid && name.touched"
+                        name="name" #name="ngModel" [(ngModel)]="service.formData.name" 
+                        >
 
                         <label for="">Starting Date</label>
-                        <input type="date" placeholder="Enter margin ratio here">
+                        <input type="date"
+                        required [class.invalidControl]="sdate.invalid && sdate.touched"
+                        name="sdate" #sdate="ngModel" [(ngModel)]="service.formData.startingDate" 
+                        >
 
                         <label for="">Ending Date</label>
-                        <input type="date" placeholder="Enter margin ratio here">
-                        <div class="mt-4">
-                            <button class="btn btnShipPrimary w-100" type="submit">Submit</button>
+                        <input type="date" 
+                        required [class.invalidControl]="edate.invalid && edate.touched"
+                        name="edate" #edate="ngModel" [(ngModel)]="service.formData.endingDate" 
+                        >
+
+                        <div class="mt-4" >
+                            <button class="btn btnShipPrimary w-100" type="submit" [disabled]="form.invalid">Submit</button>
                         </div>
                     </form>
                 </div>

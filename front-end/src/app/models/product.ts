@@ -2,10 +2,11 @@ export class Product {
 
     id:number;
     name : string;
+    barcode : string;
     weight:string;
     description : string = '';
-    expiryDate : string;
-    imagePath : string;
+    expirydate : string;
+    price : number;
     categoryId : '';
     
 }

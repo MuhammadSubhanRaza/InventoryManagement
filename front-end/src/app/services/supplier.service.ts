@@ -9,19 +9,18 @@ export class SupplierService {
 
   constructor(private http:HttpClient) { }
 
-  readonly baseUrl = "https://localhost:7023/api/suppliers";
-  readonly citiesUrl = "https://localhost:7023/api/cities";
+  readonly baseUrl = "http://localhost:5162/api/suppliers";
+  // readonly citiesUrl = "https://localhost:5162/api/cities";
 
   
   formData:Supplier = new Supplier(); 
   
-  getCities()
-  {
-    return this.http.get(this.citiesUrl)
-  }
+  // getCities()
+  // {
+  //   return this.http.get(this.citiesUrl)
+  // }
 
   postSupplier(){
-    console.log(this.formData)
     return this.http.post(this.baseUrl,this.formData)
   }
 

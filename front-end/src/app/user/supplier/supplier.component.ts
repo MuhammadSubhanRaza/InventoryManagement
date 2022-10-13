@@ -12,10 +12,10 @@ import { SupplierService } from 'src/app/services/supplier.service';
 })
 export class SupplierComponent implements OnInit {
 
-  cities : City[]
+  // cities : City[]
 
   constructor(public service:SupplierService, private toastr:ToastrService) { 
-    this.loadCities()
+    // this.loadCities()
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class SupplierComponent implements OnInit {
       res => {
         this.toastr.success("Supplier added successfully! ")
         this.resetForm(form)
-        this.loadCities()
+        // this.loadCities()
       },
       err =>{
         console.log(err)
@@ -37,17 +37,17 @@ export class SupplierComponent implements OnInit {
   }
 
 
-  loadCities()
-  {
-    this.service.getCities().subscribe(
-      res=>{
-        this.cities = res as City[]
-      },
-      err=>{
-        this.toastr.error("Some error occurred while fetching data")
-      }
-    )
-  }
+  // loadCities()
+  // {
+  //   this.service.getCities().subscribe(
+  //     res=>{
+  //       this.cities = res as City[]
+  //     },
+  //     err=>{
+  //       this.toastr.error("Some error occurred while fetching data")
+  //     }
+  //   )
+  // }
 
   resetForm(form:NgForm)
   {

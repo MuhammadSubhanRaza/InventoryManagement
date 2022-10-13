@@ -2,13 +2,13 @@
 export class Supplier {
 
     id:number;
-    companyName : string;
-    regNumber : string;
+    companyname : string;
+    regestrationNo : string;
     contactNo : string = '';
     address : string;
     supplierName : string;
     supplierContact : string;
-    cityId : number
+    city : string
     
 }
 

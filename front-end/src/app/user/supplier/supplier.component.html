@@ -8,14 +8,14 @@
                     <label>Company Name</label>
                 </div>
                 <div class="col-md-4">
-                    <input name="compName" #compName="ngModel" [(ngModel)]="service.formData.companyName" required type="text" name="reference">
+                    <input name="compName" #compName="ngModel" [(ngModel)]="service.formData.companyname" required type="text" name="reference">
                     <!-- <span class="input-error">* Error goes here</span> -->
                 </div>
                 <div class="col-md-2 add-shp-lbl-cont">
                     <label>Reg. No.</label>
                 </div>
                 <div class="col-md-4 ">
-                    <input required name="regNumber" #regNumber="ngModel" [(ngModel)]="service.formData.regNumber" type="text" name="reference">
+                    <input required name="regNumber" #regNumber="ngModel" [(ngModel)]="service.formData.regestrationNo" type="text" name="reference">
                     <!-- <span class="input-error">* Error goes here</span>   -->
                 </div>
             </div>
@@ -42,9 +42,14 @@
                     <label>City</label>
                 </div>
                 <div class="col-md-4">
-                    <select name="cityId" #cityId="ngModel" [(ngModel)]="service.formData.cityId" required class="mt-3">
+                    <select name="cityId" #cityId="ngModel" [(ngModel)]="service.formData.city" required class="mt-3">
                         <option value="-1" selected>-- Select City</option>
-                        <option value="{{item.id}}" *ngFor="let item of cities">{{item.name}}</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Faisalabad">Faisalabad</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Multan">Multan</option>
+                        <option value="Sukkur">Sukkur</option>
                     </select>
                     <!-- <span class="input-error">* Error goes here</span> -->
                 </div>

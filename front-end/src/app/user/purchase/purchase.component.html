@@ -1,6 +1,6 @@
 
 
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>ALL PURCHASES</h3>
     <div class="container-fluid">
         <div class="row">
@@ -18,13 +18,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
+                        <tr *ngFor="let item of purchases">
+                            <td>{{item.productId}}</td>
+                            <td>{{item.supplierId}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.pricePerUnit}}</td>
+                            <td>{{item.totalAmount}}</td>
                             <td>
                                 <a href="#" class="btn-in-table btn-table-view">
                                     <i class="fa fa-eye"></i>
@@ -38,65 +38,6 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>
-                                <a href="#" class="btn-in-table btn-table-view">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>
-                                <a href="#" class="btn-in-table btn-table-view">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>
-                                <a href="#" class="btn-in-table btn-table-view">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

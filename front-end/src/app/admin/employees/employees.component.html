@@ -1,28 +1,28 @@
 
 
-<div class="main-content-card">
+<div class="main-content-card animate__animated animate__zoomIn">
     <h3>ALl Employees</h3>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <table class="table" id="dailyparceldata">
+                <table *ngIf="employees.length" datatable [dtOptions]="dtOptions" class="table" id="allemployees">
                     <thead>
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Joining Date</th>
-                            <th>Salary</th>
-                            <th>Status</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Contact</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
+                        <tr *ngFor="let item of employees">
+                            <td>{{item.firstName}}</td>
+                            <td>{{item.lastName}}</td>
+                            <td>{{item.username}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.contact}}</td>
                             <td>
                                 <a href="#" class="btn-in-table btn-table-view">
                                     <i class="fa fa-eye"></i>
@@ -36,62 +36,6 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>
-                                <a href="#" class="btn-in-table btn-table-view">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>
-                                <a href="#" class="btn-in-table btn-table-view">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>Lorem, ipsum.</td>
-                            <td>
-                                <a href="#" class="btn-in-table btn-table-view">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a href="#" class="btn-in-table btn-table-edit">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

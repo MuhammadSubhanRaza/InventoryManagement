@@ -1,5 +1,6 @@
 ﻿namespace BackendInventory.Models
 {
+
     public class CustomPurchase
     {
 
