@@ -26,9 +26,12 @@
 
            
             <div class="row m-3">
-                <button type="submit" class="btn btnShipPrimary mr-3" [disabled]="form.invalid" >Add Item in Queue</button>
-                <!-- <button class="btn btnShipSecondary">Reset</button> -->
-                <!-- <button class="btn btnShipSecondary ml-3">Promo Code / Voucher No</button> -->
+                <div class="col-md-6">
+                    <button type="submit" class="btn btnShipPrimary mr-3" [disabled]="form.invalid" >Add Item in Queue</button>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button class="btn btnShipPrimary" type="button" (click)="confirmBill()">Confirm Bill</button>
+                </div>
             </div>
 
         </div>
@@ -60,6 +63,7 @@
             </tr>
         </tbody>
     </table>
+
 
 </div>
 

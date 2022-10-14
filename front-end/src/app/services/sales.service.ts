@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Saleitems } from '../models/saleitems';
 
 @Injectable({
   providedIn: 'root'
@@ -7,17 +8,26 @@ import { Injectable } from '@angular/core';
 export class SalesService {
 
   readonly productUrl = "http://localhost:5162/api/products";
-  readonly prodUrl = "http://localhost:5162/api/products";
-  readonly supUrl = "http://localhost:5162/api/suppliers";
+  readonly baseUrl = "http://localhost:5162/api/Sales";
 
   
   constructor(private http:HttpClient) { }
 
   getProducts()
   {
-    return this.http.get(this.prodUrl)
+    return this.http.get(this.productUrl)
+  }
+
+  getSales()
+  {
+    return this.http.get(this.baseUrl)
   }
   
+
+  postSales(allItems:Saleitems[])
+  {
+      return this.http.post(this.baseUrl,allItems)
+  }
   // getSuppliers()
   // {
   //   return this.http.get(this.supUrl)

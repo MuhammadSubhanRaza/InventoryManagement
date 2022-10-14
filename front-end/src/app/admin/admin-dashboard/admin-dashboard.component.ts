@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { ToastrService } from 'ngx-toastr';
+import { Dashboard } from 'src/app/models/dashboard';
+import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,12 +12,28 @@ import { Chart } from 'chart.js';
 export class AdminDashboardComponent implements OnInit {
 
   
+    details : Dashboard
 
-  constructor() { }
+    constructor(public service:DashboardService, private toastr:ToastrService) {
+        this.loadDetails()
+       }
 
   ngOnInit(): void {
     this.loadGraph()
     this.loadRightChart()
+    this.loadDetails()
+  }
+
+  loadDetails()
+  {
+    this.service.getDetails().subscribe(
+        res=>{
+          this.details = res as Dashboard
+        },
+        err=>{
+          this.toastr.error("Some error occurred while fetching data")
+        }
+      )
   }
 
 

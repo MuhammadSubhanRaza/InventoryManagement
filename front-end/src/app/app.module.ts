@@ -32,6 +32,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AllSuppliersComponent } from './user/all-suppliers/all-suppliers.component';
+import { AllsalesComponent } from './user/allsales/allsales.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AllSuppliersComponent } from './user/all-suppliers/all-suppliers.compon
     OffersComponent,
     AdminDashboardComponent,
     UserDashboardComponent,
-    AllSuppliersComponent
+    AllSuppliersComponent,
+    AllsalesComponent
   ],
   imports: [
     BrowserModule,

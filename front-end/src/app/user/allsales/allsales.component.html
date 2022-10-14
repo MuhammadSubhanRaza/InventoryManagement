@@ -1,0 +1,40 @@
+
+
+<div class="main-content-card animate__animated animate__zoomIn">
+    <h3>ALL Sales</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <!-- <th>Code</th> -->
+                            <th>Id</th>
+                            <th>Date</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of sales">
+                            <td>{{item.id}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.totalAmount}}</td>
+                            <!-- <td>
+                                <a href="#" class="btn-in-table btn-table-edit">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a href="#" class="btn-in-table btn-table-edit">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+</script>

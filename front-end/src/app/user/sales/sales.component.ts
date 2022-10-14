@@ -45,10 +45,23 @@ export class SalesComponent implements OnInit {
       this.item.product = this.fetchedItem.name
       this.item.quantity = this.productQty
       this.item.productId = this.fetchedItem.id
+      this.item.price = this.fetchedItem.price
       this.itemsList.push(this.item)
       this.resetForm()
     }
     
+  }
+
+  confirmBill()
+  {
+    this.service.postSales(this.itemsList).subscribe(
+      res=>{
+        this.itemsList = []
+      },
+      err=>{
+        this.toastr.error("Some error occurred while processing")
+      }
+    )
   }
 
 

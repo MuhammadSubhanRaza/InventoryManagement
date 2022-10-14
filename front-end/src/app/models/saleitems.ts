@@ -1,7 +1,8 @@
 export class Saleitems {
 
-    id:number;
+    id:number = 0;
     productId : Number;
     product : string;
-    quantity : Number
+    quantity : Number;
+    price : Number
 }

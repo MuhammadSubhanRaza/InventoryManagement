@@ -9,6 +9,7 @@ import { SetSalesReturnComponent } from './admin/set-sales-return/set-sales-retu
 import { AddProductComponent } from './user/add-product/add-product.component';
 import { AddPurchaseComponent } from './user/add-purchase/add-purchase.component';
 import { AllSuppliersComponent } from './user/all-suppliers/all-suppliers.component';
+import { AllsalesComponent } from './user/allsales/allsales.component';
 import { CategoryComponent } from './user/category/category.component';
 import { ProductComponent } from './user/product/product.component';
 import { PurchaseComponent } from './user/purchase/purchase.component';
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     component:AdminDashboardComponent,
     path:'dashboard'
+  },
+  {
+    component:AllsalesComponent,
+    path:'all-sales'
   },
 ];
 
